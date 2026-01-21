@@ -73,7 +73,7 @@ class Settings(BaseSettings):
     # Dynamic timeout based on voxel count
     # Format: [(max_voxels, timeout_seconds), ...]
     # Reads as: "if voxels <= max_voxels, use timeout_seconds"
-    timeout_ranges: list[tuple[int, int]] = Field(default=[
+    timeout_ranges: list[tuple[int, float]] = Field(default=[
         # (10000, 27),   # 0-25k voxels → 28 seconds timeout
         (25000, 25.5),   # 0-25k voxels → 28 seconds timeout
         (45000, 25),   # 0-25k voxels → 28 seconds timeout hehe
@@ -83,10 +83,10 @@ class Settings(BaseSettings):
     ], env="TIMEOUT_RANGES")
     
     # Fallback timeout if voxel count exceeds all ranges (seconds)
-    default_timeout: int = Field(default=25, env="DEFAULT_TIMEOUT")
+    default_timeout: float = Field(default=25, env="DEFAULT_TIMEOUT")
     
     # Legacy timeout field (deprecated, use timeout_ranges)
-    generation_timeout: int = Field(default=25, env="GENERATION_TIMEOUT")
+    generation_timeout: float = Field(default=25, env="GENERATION_TIMEOUT")
 
     class Config:
         env_file = ".env"
