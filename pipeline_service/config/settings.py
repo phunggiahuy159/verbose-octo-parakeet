@@ -76,7 +76,7 @@ class Settings(BaseSettings):
     timeout_ranges: list[tuple[int, int]] = Field(default=[
         # (10000, 27),   # 0-25k voxels → 28 seconds timeout
         (25000, 25.5),   # 0-25k voxels → 28 seconds timeout
-        (45000, 25),   # 0-25k voxels → 28 seconds timeout
+        (45000, 25),   # 0-25k voxels → 28 seconds timeout hehe
 
 
         # Above 25k → 25 seconds (uses last value)

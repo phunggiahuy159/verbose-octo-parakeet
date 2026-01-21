@@ -12,7 +12,7 @@ ENV VLLM_MODEL="THUDM/GLM-4.1V-9B-Thinking"
 ENV VLLM_API_KEY="local"
 
 # --- 1. SYSTEM DEPENDENCIES ---
-# Gộp các lệnh apt để giảm layer và cache tốt hơn
+# Gộp các lệnh apt để giảm layer và cache tốt hơn .
 RUN apt-get update && apt-get install -y --no-install-recommends \
     software-properties-common \
     wget \
